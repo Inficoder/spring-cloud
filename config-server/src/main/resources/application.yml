@@ -1,0 +1,27 @@
+server:
+  port: 9102 # 默认8888 如果配置其它客户端新增/修改配置文件为 bootstrap.yml
+
+
+#  相关配置说明：
+#  spring.cloud.config.label：配置仓库的分支
+#  spring.cloud.config.server.git.uri：配置 Git 仓库地址（GitHub、GitLab、码云 …）
+#  spring.cloud.config.server.git.search-paths：配置仓库路径（存放配置文件的目录）
+#  spring.cloud.config.server.git.username：访问 Git 仓库的账号
+#  spring.cloud.config.server.git.password：访问 Git 仓库的密码
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/Inficoder/config-server
+          search-paths: config
+          username:
+          password:
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8890/eureka/

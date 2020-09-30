@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:9102
+      name: config-demo
+      label: master
+      profile: dev
+
+#      spring.cloud.config.uri：配置服务中心的网址
+#      spring.cloud.config.name：配置文件名称的前缀
+#      spring.cloud.config.label：配置仓库的分支
+#      spring.cloud.config.profile：配置文件的环境标识 一般有 dev（表示开发环境）、test（表示测试环境）、prod（表示生产环境）
